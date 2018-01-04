@@ -1,0 +1,56 @@
+#
+Used Express application generator
+
+To run project:
+npm install
+npm start
+
+
+To test
+
+//posts post data
+curl -H "Content-Type: application/json" -X POST -d '{"name": "Top 10 ES6 Features", "url":"http://webapplog.com/es6", "text": ""}'  "http://localhost:3000/posts"
+
+//gets post data
+curl "http://localhost:3000/posts"
+
+//posts post data
+curl -H "Content-Type: application/json" -X POST -d '{"name": "Top 10 ES6 Features", "url":"http://webapplog.com/es6", "text": ""}'  "http://localhost:3000/posts"
+
+//gets post data
+curl "http://localhost:3000/posts"
+
+//updates post data at specific id
+curl -H 'Content-Type: application/json' -X PUT -d '{"name": "Top 10 ES6 Features Every Developer Must Know", "url":"http://webapplog.com/es6", "text": ""}' "http://localhost:3000/posts/1"
+
+//gets post data
+curl "http://localhost:3000/posts"
+
+//deletes post data at specific id
+curl -X DELETE "http://localhost:3000/posts/0"
+
+//gets post data
+curl "http://localhost:3000/posts"
+
+# Test comments
+
+//gets
+curl "http://localhost:3000/posts/0/comments"
+
+// Add comment
+curl -H "Content-Type: application/json" -X POST -d '{"test": "Comment1"}'  "http://localhost:3000/posts/0/comments"
+
+//gets
+curl "http://localhost:3000/posts/0/comments"
+
+//update comment at specific commentId
+curl -H 'Content-Type: application/json' -X PUT -d '{"text": "Comment text is update via API"}' "http://localhost:3000/posts/0/comments/0"
+
+//gets post data
+curl "http://localhost:3000/posts"
+
+//deletes post data at specific id
+curl -X DELETE "http://localhost:3000/posts/0"
+
+//gets post data
+curl "http://localhost:3000/posts"
